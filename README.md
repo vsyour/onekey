@@ -6,6 +6,4 @@ QQ群： 397745473
 
 执行方法：
 
-wget --no-check-certificate -O /root/run.sh https://git.io/JtHhx
-chmod 755 /root/run.sh
-apt install dos2unix && dos2unix /root/run.sh && bash /root/run.sh
+wget --no-check-certificate -O /root/run.sh https://git.io/JtHhx && chmod 755 /root/run.sh && apt install dos2unix && dos2unix /root/run.sh && bash /root/run.sh
