@@ -3,6 +3,8 @@
 
 QQ群： 397745473
 
+vultr OS: Debian 10 x64 (buster) 测试通过
+
 
 执行方法：
 wget --no-check-certificate -O /root/run.sh https://git.io/JtHhx && chmod 755 /root/run.sh && apt install dos2unix && dos2unix /root/run.sh && bash /root/run.sh
