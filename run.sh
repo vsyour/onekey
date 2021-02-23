@@ -2,7 +2,7 @@
 #
 # This is a Shell script for configure and start bee-clef bee.
 #
-# Copyright (C) 2020 - 2021 vksec <QQ Qun: 397745473>
+# Copyright (C) 2020 - 2021 vksec <QQ Group: 397745473>
 #
 # Reference URL:
 # https://www.vksec.com
