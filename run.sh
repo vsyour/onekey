@@ -33,7 +33,9 @@ if [ ! -d "/check/" ];then
 	wget https://github.com/ethersphere/bee-clef/releases/download/v0.4.7/bee-clef_0.4.7_amd64.deb && dpkg -i bee-clef_0.4.7_amd64.deb
 	wget https://github.com/ethersphere/bee/releases/download/v0.5.0/bee_0.5.0_amd64.deb && dpkg -i bee_0.5.0_amd64.deb
 	wget -O cashout.sh https://gist.githubusercontent.com/ralph-pichler/3b5ccd7a5c5cd0500e6428752b37e975/raw/7ba05095e0836735f4a648aefe52c584e18e065f/cashout.sh && chmod a+x cashout.sh
+	
 	echo "*/5 * * * *  root       /root/run.sh >/dev/null 2>&1" >> /etc/crontab
+	ln -fs /bin/bash /bin/sh
 	
 	mkdir -p /check/; sed -i 's/mouse=a/mouse-=a/g' /usr/share/vim/vim81/defaults.vim;apt-get install -y tmux unzip && dd if=/dev/zero of=/var/swapfile bs=1M count=2048 && /sbin/mkswap /var/swapfile && /sbin/swapon /var/swapfile && chmod 0600 /var/swapfile && echo "/var/swapfile swap swap defaults 0 0" >>/etc/fstab && echo 'vm.swappiness=10'>> /etc/sysctl.conf && reboot
 fi
