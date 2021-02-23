@@ -5,6 +5,8 @@
 # Copyright (C) 2020 - 2021 vksec <QQ Group: 397745473>
 #
 # Reference URL:
+# https://medium.com/ethereum-swarm/swarm-is-airdropping-1-000-000-bzz-bd3b706918d3
+# https://docs.ethswarm.org/docs/
 # https://www.vksec.com
 
 
