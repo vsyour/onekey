@@ -264,8 +264,7 @@ Install_Main(){
 		#install new cron file
 		#crontab mycron
 		#rm -f mycron
-		systemctl restart cron
-		systemctl restart crond
+		/etc/init.d/cron restart
 		
 		endTime=`date +%s`
 		((outTime=($endTime-$startTime)/60))
