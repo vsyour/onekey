@@ -226,7 +226,7 @@ Install_Main(){
 		
 		date "+【%Y-%m-%d %H:%M:%S】 Start Installing packages" 2>&1 | tee -a $logPath
 		date "+【%Y-%m-%d %H:%M:%S】 Start Installing Swarm Bee" 2>&1 | tee -a $logPath
-		curl -s https://raw.githubusercontent.com/ethersphere/bee/master/install.sh | TAG=v0.5.0 bash
+		curl -s https://raw.githubusercontent.com/ethersphere/bee/master/install.sh | TAG=v0.5.1 bash
 		if [ "${PM}" = "yum" ]; then
 		    ${PM} -y update
 		    ${PM} -y install curl wget tmux jq
