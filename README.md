@@ -3,7 +3,9 @@
 
 QQ群： 397745473
 
-vultr OS: Debian 10 x64 (buster) 测试通过
+vultr OS: CentOS/Ubuntu/Debian 测试通过
+
+![](https://i.imgur.com/e6EQhuP.png)
 
 
 执行方法：
