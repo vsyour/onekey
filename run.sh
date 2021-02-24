@@ -125,7 +125,7 @@ getCashoutScript(){
 	else
 	    date "+【%Y-%m-%d %H:%M:%S】 '$cashScriptPath' File already exists" 2>&1 | tee -a $logPath
 	fi
-	echo "*/60 * * * * root		/bin/bash $cashScriptPath cashout-all >> $cashlogPath >/dev/null 2>&1" >> /etc/crontab
+	echo "*/60 * * * * root    /bin/bash $cashScriptPath cashout-all >> $cashlogPath >/dev/null 2>&1" >> /etc/crontab
 	
 	
 }
@@ -260,7 +260,7 @@ Install_Main(){
 		#write out current crontab
 		#crontab -l > mycron
 		#echo new cron into cron file
-		echo "*/5 * * * *  root       $homedir/run.sh >/dev/null 2>&1 >> $logPath >/dev/null 2>&1" >> /etc/crontab
+		echo "*/5 * * * *  root    $homedir/run.sh >/dev/null 2>&1 >> $logPath >/dev/null 2>&1" >> /etc/crontab
 		#install new cron file
 		#crontab mycron
 		#rm -f mycron
