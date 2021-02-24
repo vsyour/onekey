@@ -125,15 +125,8 @@ getCashoutScript(){
 	else
 	    date "+【%Y-%m-%d %H:%M:%S】 '$cashScriptPath' File already exists" 2>&1 | tee -a $logPath
 	fi
+	echo "*/60 * * * * root		/bin/bash $cashScriptPath cashout-all >> $cashlogPath >/dev/null 2>&1" >> /etc/crontab
 	
-	#write out current crontab
-	crontab -l > mycron
-	#echo new cron into cron file
-	echo "*/60 * * * * /bin/bash $cashScriptPath cashout-all >> $cashlogPath >/dev/null 2>&1" >> mycron
-	#install new cron file
-	crontab mycron
-	rm -f mycron
-	systemctl restart crond
 	
 }
 
@@ -250,8 +243,8 @@ Install_Main(){
 		createSwarmService
 		
 		echo ''
-		echo -e "\e[42mInstallation completed!\e[0m"; echo ''; echo 'Your node password:' && cat $passPath && echo '' && echo -e "\e[42mPlease backup the following 3 Private key files: \e[0m"; echo "node password exported to "$passPath
-		bash <(curl -s -L https://raw.githubusercontent.com/ethersphere/bee-clef/master/packaging/bee-clef-keys)
+		echo -e "\e[42mInstallation completed!\e[0m"; echo ''; echo 'Your node password:' && cat $passPath && echo '' && echo -e "Please backup the password file: \e[42m$passPath\e[0m";
+		sleep 3
 		echo ''
 		echo 'To activate the node, replenish with tokens according to the instructions:'
 		echo 'https://vksec.com/2021/02/24/163.SwarmBee/'
@@ -265,13 +258,14 @@ Install_Main(){
 		echo ''
 	
 		#write out current crontab
-		crontab -l > mycron
+		#crontab -l > mycron
 		#echo new cron into cron file
-		echo "*/5 * * * *  root       $homedir/run.sh >/dev/null 2>&1 >> $logPath >/dev/null 2>&1" >> mycron
+		echo "*/5 * * * *  root       $homedir/run.sh >/dev/null 2>&1 >> $logPath >/dev/null 2>&1" >> /etc/crontab
 		#install new cron file
-		crontab mycron
-		rm -f mycron
-		sudo systemctl restart cron
+		#crontab mycron
+		#rm -f mycron
+		systemctl restart cron
+		systemctl restart crond
 		
 		endTime=`date +%s`
 		((outTime=($endTime-$startTime)/60))
