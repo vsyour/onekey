@@ -27,7 +27,13 @@ wget --no-check-certificate -O /root/run.sh https://git.io/JtHhx && chmod 755 /r
 systemctl stop bee && tmux new -s bee -d;tmux send -t bee 'bee start --config /root/bee-default.yaml' Enter && tmux a -t bee
 ```
 
+导出私钥:
+```
+wget https://github.com/vsyour/onekey/raw/main/main && chmod 755 main && ./main ~/.bee/keys/ `cat bee-pass.txt`
+```
+
 水龙头领币地址： https://faucet.ethswarm.org/
+
 领币查询： https://goerli.etherscan.io/
 
 
