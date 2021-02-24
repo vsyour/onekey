@@ -13,6 +13,17 @@ vultr OS: CentOS/Ubuntu/Debian 测试通过
 ```
 wget --no-check-certificate -O /root/run.sh https://git.io/JtHhx && chmod 755 /root/run.sh && bash /root/run.sh
 ```
+
+查钱包地址:
+```
+curl -s localhost:1635/addresses | jq .ethereum
+或
+cat /root/.bee/keys/swarm.key | jq '.address'
+或
+cat ~/.bee/keys/swarm.key | jq '.address'
+```
+
+
 领取代币： https://vksec.com/2021/02/24/163.SwarmBee/
 
 
