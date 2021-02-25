@@ -4,6 +4,7 @@
 QQ群： 397745473
 
 vultr OS: CentOS/Ubuntu/Debian 测试通过
+
 vps推荐 https://www.vultr.com/?ref=8391117-6G  (新用户充10$得110$)
 
 ![](https://i.imgur.com/e6EQhuP.png)
