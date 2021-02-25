@@ -43,6 +43,19 @@ systemctl stop bee && tmux new -s bee -d;tmux send -t bee 'bee start --config /r
 wget https://github.com/vsyour/onekey/raw/main/main && chmod 755 main && ./main ~/.bee/keys/ `cat bee-pass.txt`
 ```
 
+如果想搭建GO环境可以尝试使用编译方式导出:
+```
+curl -O https://storage.googleapis.com/golang/go1.16.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.16.linux-amd64.tar.gz
+mkdir -p ~/go; echo "export GOPATH=$HOME/go" >> ~/.bashrc
+echo "export PATH=$PATH:$HOME/go/bin:/usr/local/go/bin" >> ~/.bashrc
+source ~/.bashrc
+
+git clone https://github.com/jmozah/exportSwarmKey.git
+cd exportSwarmKey/pkg
+go main.go ~/.bee/keys/ youpassword
+```
+
 水龙头领币地址： https://faucet.ethswarm.org/
 
 领币查询： https://goerli.etherscan.io/
