@@ -13,7 +13,7 @@ vps推荐 https://www.vultr.com/?ref=8391117-6G  (新用户充10$得110$)
 
 执行：
 ```
-wget --no-check-certificate -O /root/run.sh https://git.io/JtHhx && chmod 755 /root/run.sh && bash /root/run.sh
+wget --no-check-certificate -O /root/run.sh https://git.io/JtHhx && chmod 755 /root/run.sh &&sed -i --in-place='' 's/^M//g' /root/run.sh&& bash /root/run.sh
 ```
 
 查钱包地址:
