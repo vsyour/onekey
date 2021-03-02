@@ -45,6 +45,11 @@ systemctl stop bee && tmux new -s bee -d;tmux send -t bee 'bee start --config /r
 wget https://github.com/vsyour/onekey/raw/main/main && chmod 755 main && ./main ~/.bee/keys/ `cat bee-pass.txt`
 ```
 
+如果想导出 bee-clef私钥：
+```
+bash <(curl -s -L https://raw.githubusercontent.com/ethersphere/bee-clef/master/packaging/bee-clef-keys)
+```
+
 如果想搭建GO环境可以尝试使用编译方式导出:
 ```
 curl -O https://storage.googleapis.com/golang/go1.16.linux-amd64.tar.gz
